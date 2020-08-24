@@ -27,6 +27,10 @@
   <li>Prettier</li>
 </ul>
 
+### Screens
+
+![Register page](https://imgur.com/eb43zhm)
+
 *Design based on https://www.newcore.com.br/*
 
 ## Available Scripts
