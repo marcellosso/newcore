@@ -4,7 +4,7 @@
   <li>Register a new user</li>
   <li>Table with all registered users</li>
   <li>Edit an user</li>
-  <li>Delete an usere</li>
+  <li>Delete an user</li>
 </ol>
 
 ### Routes
@@ -26,6 +26,8 @@
   <li>Eslint</li>
   <li>Prettier</li>
 </ul>
+
+*Design based on https://www.newcore.com.br/*
 
 ## Available Scripts
 
