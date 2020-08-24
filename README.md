@@ -29,9 +29,9 @@
 
 ### Screens
 
-(https://i.imgur.com/BEAv1Xs.jpg)
-(https://i.imgur.com/3vRTNnd.jpg)
-(https://i.imgur.com/gliI23f.jpg)
+![Register page](https://i.imgur.com/BEAv1Xs.jpg)
+![Users page](https://i.imgur.com/3vRTNnd.jpg)
+![Edit page](https://i.imgur.com/gliI23f.jpg)
 
 *Design based on https://www.newcore.com.br/*
 
