@@ -1,0 +1,55 @@
+.container {
+    height: 100vh;
+
+    display: flex;
+    align-items: stretch;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 700px;
+}
+
+.content img {
+    width: 350px;
+    height: 350px;
+}
+
+.content form {
+    margin: 80px 0;
+    width: 340px;
+    text-align: center;
+}
+
+.content form h1 {
+    margin-bottom: 24px;
+}
+
+.content form button {
+    background: #9f1329;
+    height: 56px;
+    border-radius: 10px;
+    border: 0;
+    padding: 0 16px;
+    color: #fff;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 16px;
+    transition: background-color .2s ease;
+}
+
+.content form button:hover {
+    background: #640c19;
+}
+
+.background {
+    flex: 1;
+    background: url('/images/corretor.jpg') no-repeat center;
+    background-size: cover;
+}
