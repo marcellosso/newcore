@@ -9,11 +9,11 @@
 
 ### Routes
 
-<ol>
+<ul>
   <li>/register</li>
   <li>/users</li>
   <li>/edit</li>
-</ol>
+</ul>
 
 ### Tools
 
