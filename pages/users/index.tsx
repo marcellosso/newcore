@@ -46,7 +46,7 @@ const Users: React.FC = () => {
             <img src={logo} alt="NewCore" />
 
             <div className="userContent">
-                <button onClick={() => { router.push('/register') }}>Voltar</button>
+                <button onClick={() => { router.push('/register') }}>Novo Usuário</button>
                 <div className="table">
                     <div className="col main"><p>NOME</p></div>
                     <div className="col main"><p>CPF</p></div>
