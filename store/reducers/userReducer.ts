@@ -31,6 +31,7 @@ export const userReducer = (state = initialState, action) => {
                 }
             }
         case types.ADD_USER:
+            console.log(action.payload);
             return {
                 ...state,
                 users: state.users.concat({

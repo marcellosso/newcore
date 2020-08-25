@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useRouter } from 'next/router';
 import { FiEdit, FiTrash } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { getusers, removeuser } from '../../store/actions/userActions';
 import Link from 'next/link';
+import Modal from 'react-modal';
 
 
 import logo from '../../assets/logo.svg';
@@ -13,11 +14,26 @@ import './styles.css'
 
 
 
-
 const Users: React.FC = () => {
+
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)'
+        }
+    }
+
+    Modal.setAppElement('#__next');
+
 
     const dispatch = useDispatch();
     const { users } = useSelector(state => state.user);
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const [activeItem, setActive] = useState({});
 
     useEffect(() => {
         dispatch(getusers());
@@ -37,11 +53,40 @@ const Users: React.FC = () => {
 
     const handleDeleteButton = async (dado) => {
         await dispatch(removeuser(dado));
+        closeModal();
+    }
+
+    const openModal = (dado) => {
+        console.log('entrou');
+        setActive(dado);
+        setIsOpen(true);
+    }
+
+    const closeModal = () => {
+        setIsOpen(false);
     }
 
     return (
         <div className="userContainer">
 
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="CONFIRMAÇÃO"
+            >
+
+                <div className="modalContainer">
+                    <h3>TEM CERTEZA QUE DESEJA DELETAR O USUÁRIO?</h3>
+                    <h5>*Essa ação não pode ser desfeita*</h5>
+
+                    <div>
+                        <button className="modalButton" style={{ backgroundColor: '#32a852' }} onClick={() => { handleDeleteButton(activeItem) }}>SIM</button>
+                        <button className="modalButton" style={{ backgroundColor: '#a83432' }} onClick={closeModal}>NÃO</button>
+                    </div>
+                </div>
+
+            </Modal>
 
             <img src={logo} alt="NewCore" />
 
@@ -75,7 +120,8 @@ const Users: React.FC = () => {
                                     <button onClick={() => { handleEditButton(data) }} >
                                         <FiEdit />
                                     </button>
-                                    <button onClick={() => { handleDeleteButton(data) }}>
+                                    {/* <button onClick={() => { handleDeleteButton(data) }}> */}
+                                    <button onClick={() => { openModal(data) }}>
                                         <FiTrash />
                                     </button>
                                 </div>

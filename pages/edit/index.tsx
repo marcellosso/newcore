@@ -15,9 +15,6 @@ import './styles.css'
 
 import getValidationErrors from '../../utils/getValidationErrors';
 
-import { cpf } from 'cpf-cnpj-validator';
-import { userReducer } from '../../store/reducers/userReducer';
-
 
 const Edit: React.FC = () => {
     const formRef = useRef<FormHandles>(null);
@@ -36,8 +33,6 @@ const Edit: React.FC = () => {
     const dispatch = useDispatch();
     const { users } = useSelector(state => state.user);
 
-    
-
     useEffect(() => {
         dispatch(getusers());
         getuserbyid();
@@ -54,7 +49,7 @@ const Edit: React.FC = () => {
 
     const handleSubmit = useCallback(async (data: object) => {
         const regexCPF = /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/gm;
-
+        
         try {
             const schema = Yup.object().shape({
                 name: Yup.string().required('Nome obrigatório'),
@@ -98,7 +93,7 @@ const Edit: React.FC = () => {
                     <h1>Editar informações</h1>
 
                     <Input name="name" placeholder="Nome" />
-                    <Input name="cpf" placeholder="CPF" type="number" />
+                    <Input name="cpf" placeholder="CPF" />
                     <Input name="date" placeholder="Data de nascimento" type="date" />
                     <Input name="income" placeholder="Renda Mensal" type="number" />
 

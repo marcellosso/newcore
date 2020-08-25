@@ -28,7 +28,7 @@ const Register: React.FC = () => {
 
   const handleSubmit = useCallback(async (data: object) => {
     const regexCPF = /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/gm;
-   
+
     try {
       const schema = Yup.object().shape({
         name: Yup.string().required('Nome obrigatório'),
@@ -40,7 +40,7 @@ const Register: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false,
       });
-
+  
       dispatch(adduser(data));
    
       router.push('/users');
@@ -62,7 +62,7 @@ const Register: React.FC = () => {
           <h1>Formulario de registro</h1>
 
           <Input name="name" placeholder="Nome" />
-          <Input name="cpf" placeholder="CPF" type="number" />
+          <Input name="cpf" placeholder="CPF" />
           <Input name="date" placeholder="Data de nascimento" type="date" />
           <Input name="income" placeholder="Renda Mensal" type="number" />
 
