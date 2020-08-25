@@ -57,7 +57,6 @@ const Users: React.FC = () => {
     }
 
     const openModal = (dado) => {
-        console.log('entrou');
         setActive(dado);
         setIsOpen(true);
     }
@@ -114,7 +113,7 @@ const Users: React.FC = () => {
                             <div className="col"><p>{data.date}</p></div>
                             <div className="col edit">
                                 <div className="semi-col">
-                                    <p>{data.income}</p>
+                                    <p>R$ {data.income}</p>
                                 </div>
                                 <div className="semi-col">
                                     <button onClick={() => { handleEditButton(data) }} >

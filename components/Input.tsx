@@ -65,6 +65,7 @@ const Input: React.FC<InputProps> = ({ name, ...rest }) => {
                     //     value={maskedIncome}
                     //     onChange={onHandleChangeIncome}
                     //     {...rest} />
+                    
                     <CurrencyInput 
                         onFocus={() => setIsFocused(true)}
                         onBlur={() => setIsFocused(false)} 
